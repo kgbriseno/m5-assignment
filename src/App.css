@@ -1,0 +1,109 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+
+.container1{
+  background-color: #d4b996ff;
+  height: 100px;
+}
+
+.heading{
+  text-align: left;
+  padding: 20px 0px 0px 20px;
+  margin: 30px;
+
+}
+
+
+
+.icon{
+  padding-top: 18px;
+  padding-right: 0px;
+  padding-left: 0px;
+  text-align: right;
+}
+
+.Quantity {
+  padding: 57px 0;
+  text-align: center;
+  font-size: 15px;
+}
+
+.value {
+  border: 2px solid grey;
+  font-size: 16px;
+  margin: 6px;
+  padding: 6px;
+  display: inline-block;
+}
+
+.outline {
+  border: .5px solid grey;
+}
+
+.desc {
+  font-weight: bolder;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.productImg{
+  margin: 5px 0 5px 0;
+}
+
+.topheading a {
+  text-decoration: none;
+  color: white;
+}
+
+.icon a {
+  text-decoration: none;
+  color: white;
+}
+
+.products {
+  padding: 5px 5px 1px 5px;
+  margin: 0px 5px 0px 5px;
+}
+
+.cartHeader{
+  font-size: 30px;
+  font-weight: bold;
+  text-align: left;
+  padding: 15px 0 0 0;
+}
+
+.items {
+  padding-left: 5px;
+}
+
+.values {
+  padding-left: 5px;
+}
+
+.checkout {
+  text-align: left;
+} 
