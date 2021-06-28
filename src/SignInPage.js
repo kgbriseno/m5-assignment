@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
+import {Link} from "react-router-dom"
+import {Button} from "react-bootstrap";
 import FacebookLogin from 'react-facebook-login';
 import { Card } from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css"
 import './App.css';
+import { tsConstructorType } from '@babel/types';
+import { useHistory } from 'react-router-dom';
+
 
 function SignInPage() {
+
   //set up login
   const [login, setLogin] = useState(false);
   //set up fb data 
@@ -14,7 +20,7 @@ function SignInPage() {
   const responseFacebook = (response) => {
     console.log(response);
     setData(response);
-    setPicture(response.picture.data.url);
+    //setPicture(response.picture.data.url);
     if(response.accessToken){
       setLogin(true);
     } else{
@@ -43,11 +49,15 @@ function SignInPage() {
                 scope="public_profile,user_friends"
                 callback={responseFacebook} 
                 icon="fa-facebook"/>
+
             </React.Fragment>
             }
 
             {login &&
-              <Home fbpic={picture} fbdata={data}/>
+            
+            <Link to="/Submit">
+            <Button className="checkout-btn">Submit Order</Button>
+            </Link>
             }
           </Card.Text>
         </Card.Body>
@@ -57,13 +67,17 @@ function SignInPage() {
 }
 
 function LoginForm(){
+  const history = useHistory();
+
   return(
     <form className="border mt-3 mb-5 p-3 bg-white">
       <label className="m-2">Name:</label>
       <input type="text" name="name" placeholder="Your name"/>
       <label className="m-2">Email:</label>
       <input type="email" name="email" placeholder="Your Email"/>
-      <input type="submit" value="Login" className="btn bg-success text-white my-3"/>
+      <Link to="/Checkout">
+          <Button className="mt-4">Login</Button>
+      </Link>
     </form>
   )
 }

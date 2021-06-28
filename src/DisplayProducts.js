@@ -37,15 +37,15 @@ function DisplayProducts(props) {
           <div key={list.id}>
             <div className="container">
               <div className="row justify-content-start outline products">
-                <div className="col-2">
+                <div className="col-4">
                   <div className="desc">{list.desc} <span style={{color: "red"}}> ${list.price}</span></div>
-                  <div className="productImg"> <img src={list.image} alt={list.desc} width="100px" onClick={() => handleShow(list)}/> </div>
+                  <div className="productImg"> <img src={list.image} alt={list.desc} width="300px" onClick={() => handleShow(list)}/> </div>
                 </div>
-                <div className="col-3 Quantity">
+                <div className="col-2 Quantity">
                   <span>
                     <Button className="btn btn-secondary mx-1 ps-3" onClick={() => props.incrementValue(list)}><FontAwesomeIcon icon={faPlusCircle}/></Button> 
                     <Button className="btn btn-secondary mx-1 ps-3" onClick={() => props.decrementValue(list)}><FontAwesomeIcon icon={faMinusCircle}/></Button> 
-                    <div className="value"> {list.value}</div>Likes</span> 
+                    <div className="value"> {list.value}</div>Items</span> 
                 </div>
               </div>
             </div>      
@@ -58,7 +58,7 @@ function DisplayProducts(props) {
               <Modal.Title>{showImage.desc}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-              <img src={showImage.image} width="350" alt={showImage.desc} className="mx-5"/>
+              <img src={showImage.image} width="450" alt={showImage.desc} className="mx-5"/>
               <p><span className="text-dark">Ratings:</span> {showImage.rating}/5</p>
           </Modal.Body>
       </Modal>

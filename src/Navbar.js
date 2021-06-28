@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {Link,Switch,Route, BrowserRouter as Router} from "react-router-dom";
 import DisplayProducts from "./DisplayProducts";
 import Cart from "./Cart";
+import Checkout from "./Checkout";
+import Submit from "./Submit";
 import SignInPage from "./SignInPage";
 import './App.css';
 
@@ -17,7 +19,7 @@ function Navbar(props) {
             <div className="row align-items-start heading">
 
                 <h1 className="col topheading">
-                <Link to="/"> Coffe Insanity </Link>
+                <Link to="/"> Coffee Bean Mania </Link>
                 </h1>
                 <div className="col icon">
                     <Link to="/Cart" > <FontAwesomeIcon icon={faShoppingCart} /> 
@@ -38,6 +40,12 @@ function Navbar(props) {
                     </Route>
                     <Route path="/Cart">
                         <Cart totalItems={props.totalItems} totalValue={props.totalValue}/>
+                    </Route>
+                    <Route path="/Checkout">
+                        <Checkout/>
+                    </Route>
+                    <Route path="/Submit">
+                        <Submit/>
                     </Route>
                     <Route path="/SignInPage">
                         <SignInPage totalItems={props.totalItems}/>
